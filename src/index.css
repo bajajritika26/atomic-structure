@@ -1,13 +1,88 @@
-body {
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+:root {
+  --bg: #0b1020;
+  --card: #121935;
+  --muted: #aeb7d6;
+  --accent: #6ea8fe;
+  --accent-2: #ffd166;
+  --danger: #ef476f;
+  --ok: #06d6a0;
+  --ring: rgba(110,168,254,0.4);
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+* { box-sizing: border-box; }
+html, body, #root { height: 100%; }
+body {
+  margin: 0;
+  font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Ubuntu, Cantarell, Noto Sans, Helvetica Neue, Arial, 'Apple Color Emoji', 'Segoe UI Emoji';
+  background: radial-gradient(1200px 600px at 20% -10%, #172043 0%, var(--bg) 40%), var(--bg);
+  color: white;
 }
+
+.container { max-width: 1100px; margin: 0 auto; padding: 24px; }
+.nav { position: sticky; top: 0; backdrop-filter: blur(8px); background: rgba(10, 16, 36, 0.6); border-bottom: 1px solid #243058; z-index: 50; }
+.nav-wrap { display: flex; align-items: center; justify-content: space-between; padding: 12px 24px; }
+.brand { font-weight: 800; letter-spacing: .3px; }
+.tabs { display: flex; gap: 8px; flex-wrap: wrap; }
+.tab { padding: 8px 12px; border-radius: 999px; border: 1px solid #2b396d; background: #0f1633; color: #c9d3ff; cursor: pointer; }
+.tab.active { background: #2b396d; color: #fff; box-shadow: 0 0 0 4px var(--ring); }
+.card { background: linear-gradient(180deg, #121935 0%, #0d142c 100%); border: 1px solid #243058; border-radius: 18px; padding: 18px; box-shadow: 0 5px 30px rgba(5,8,20,.4); }
+.grid { display: grid; grid-template-columns: 1fr; gap: 20px; }
+@media (min-width: 900px) { .grid-2 { grid-template-columns: 1fr 1fr; } }
+h1 { font-size: 32px; margin: 0; }
+h2 { font-size: 24px; margin: 0; }
+p  { color: #d7def9; line-height: 1.6; }
+
+.btn { background: #1a2250; color: #e8eeff; padding: 10px 14px; border-radius: 12px; border: 1px solid #2b396d; cursor: pointer; }
+.btn:hover { filter: brightness(1.1); }
+.btn.primary { background: var(--accent); color: #00122a; border-color: transparent; }
+.btn.ghost { background: transparent; border-color: #3d4b87; }
+.btn.danger { background: var(--danger); color:#fff; border-color: transparent; }
+.btn.success { background: var(--ok); color:#00122a; border-color: transparent; }
+.row { display:flex; gap: 10px; align-items: center; flex-wrap: wrap; }
+
+.input { padding: 10px 12px; border-radius: 10px; border: 1px solid #32407a; background: #0e1531; color: #cfe0ff; }
+label { color: #bac6f0; font-size: 14px; }
+
+.nucleus { width: 90px; height: 90px; border-radius: 999px; background: radial-gradient(circle at 30% 30%, #ff6b6b, #c73866); display:flex; align-items:center; justify-content:center; border:2px solid #ffb3c1; color:white; font-weight:700; }
+.shell { position: absolute; border: 1px dashed #4e5ba6; border-radius: 999px; }
+.canvas { position: relative; width: 420px; height: 420px; margin: 0 auto; border-radius: 20px; border: 1px solid #243058; background: radial-gradient(300px 300px at 50% 40%, #0e1430, #0a1125); }
+.electron { width: 12px; height: 12px; border-radius: 999px; background: radial-gradient(circle at 30% 30%, #3af, #3af); position: absolute; box-shadow: 0 0 16px #3af; }
+
+.note { font-size: 13px; color: #aab5e4; }
+.tag { display:inline-block; padding:6px 10px; background:#1a2250; border:1px solid #2b396d; border-radius: 999px; color:#c9d3ff; }
+.list { margin: 8px 0 0; padding-left: 18px; color:#d7def9; }
+.list li { margin: 6px 0; }
+
+.quiz-option { display:block; padding: 10px 12px; border: 1px solid #2b396d; border-radius: 12px; background:#0e1430; color:#dfe7ff; cursor:pointer; margin:8px 0; }
+.quiz-option:hover { background:#152051; }
+
+.drag-area { min-height: 200px; border:2px dashed #33407a; border-radius:16px; padding:12px; display:grid; place-items:center; color:#b8c4f8; }
+
+.atom-visual {
+  position: relative;
+  width: 350px;  
+  height: 350px;
+  margin: auto;
+}
+
+
+.nucleus {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background: radial-gradient(circle at center, #ff6b6b, #c92a2a);
+  border-radius: 50%;
+  width: 80px;   
+  height: 80px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  font-weight: bold;
+  box-shadow: 0 0 15px rgba(255, 0, 0, 0.5);
+  z-index: 10;
+}
+
+
+
